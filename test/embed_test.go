@@ -32,7 +32,7 @@ Embed File ke []byte
 file file binary : gambar, vidio, atau musik
 */
 
-//go:embed ../belajar-golang-embed/logo.png
+//go:embed logo.png
 var logo []byte
 
 func TestByte(t *testing.T) {
@@ -50,9 +50,9 @@ Embed Multiple Files
 4. Selain itu variablenya bisa kita gunakan tipe data embed.FS (File System)
 */
 
-//go:embed test/files/a.txt
-//go:embed test/files/b.txt
-//go:embed test/files/c.txt
+//go:embed files/a.txt
+//go:embed files/b.txt
+//go:embed files/c.txt
 var files embed.FS
 
 func TestMultipleFiles(t *testing.T) {
@@ -81,7 +81,7 @@ https://golang.org/pkg/path/#Match
 //kalau * saja gaperduli filenya apa akan di load
 // kalau *.txt akan di ambil semua file yang bentuknya txt
 
-//go:embed test/files/*.txt
+//go:embed files/*.txt
 var path embed.FS
 
 func TestPathMatcher(t *testing.T) {
